@@ -1,3 +1,8 @@
-const inputBtn = document.getElementById("input-btn");
+const inputEl = document.getElementById('input-el');
+const inputBtn = document.getElementById('input-btn');
 
-inputBtn.addEventListener("click", () => console.log("Click!"));
+let myLeads = [];
+
+inputBtn.addEventListener('click', () => {
+  myLeads.push(inputEl.value);
+});
