@@ -2,17 +2,20 @@ const inputEl = document.getElementById('input-el');
 const inputBtn = document.getElementById('input-btn');
 const ulEl = document.getElementById('ul-el');
 
-let myLeads = ['one', 'two', 'three'];
+let myLeads = [];
 
 inputBtn.addEventListener('click', () => {
   myLeads.push(inputEl.value);
+  inputEl.value = '';
+  renderLeads();
 });
 
-let listItems = '';
+function renderLeads() {
+  let listItems = '';
 
-for (let lead of myLeads) {
-  listItems += `<li>${lead}</li>`;
+  for (let lead of myLeads) {
+    listItems += `<li>${lead}</li>`;
+  }
+  // DOM manipulation has a cost
+  ulEl.innerHTML = listItems;
 }
-
-// DOM manipulation has a cost
-ulEl.innerHTML = listItems;
