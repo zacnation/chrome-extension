@@ -8,6 +8,11 @@ inputBtn.addEventListener('click', () => {
   myLeads.push(inputEl.value);
 });
 
+let listItems = '';
+
 for (let lead of myLeads) {
-  ulEl.innerHTML += `<li>${lead}</li>`;
+  listItems += `<li>${lead}</li>`;
 }
+
+// DOM manipulation has a cost
+ulEl.innerHTML = listItems;
